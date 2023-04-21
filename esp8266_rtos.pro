@@ -1,3 +1,4 @@
+
 INCLUDEPATH +=./ \
     components/freertos/include \
     components/app_update/include \
@@ -5,7 +6,46 @@ INCLUDEPATH +=./ \
     components/esp_event/include/ \
     components/nvs_flash/include/   \
     components/lwip/lwip/src/include/ \
-    components/log/include/
+    components/log/include/ \
+    components/spi_flash/include/ \
+    components/freertos/port/esp8266/include/freertos \
+    components/freertos/include/freertos/private/ \
+    components/esp_common/include/ \
+    components/fatfs/test_fatfs_host/sdkconfig \
+    components/freertos/port/esp8266/include/ \
+    components/tcpip_adapter/include/ \
+    components/json/cJSON/tests/unity/src/ \
+    components/heap/include \
+    examples/common_components/protocol_examples_common/include \
+    components/vfs/include/ \
+    components/bootloader_support/include/ \
+    components/bootloader_support/include_priv/ \
+    examples/get-started/tools/unit-test-app/components/unity/include \
+    components/esp8266/include/ \
+    components/coap/port/include/   \
+    components/tcp_transport/include/ \
+    components/esp_http_client/lib/include/ \
+    components/esp_http_client/include/ \
+    components/freertos/port/esp8266/include/freertos/ \
+    components/esp_ringbuf/include/ \
+    components/mqtt/esp-mqtt/include/ \
+    components/esp-tls/ \
+    components/spiffs/include/ \
+    components/console/ \
+    components/freertos/include/freertos/ \
+    examples/system/factory-test/components/rf_test/include/ \
+    components/esp_https_ota/include/ \
+    components/wpa_supplicant/include/esp_supplicant/ \
+    examples/wifi/iperf/components/iperf/ \
+    components/protocomm/include/common/ \
+    components/protocomm/include/transports/ \
+    components/protocomm/include/security/ \
+    components/wifi_provisioning/include/ \
+    components/pthread/include/ \
+    components/tcp_transport/private_include/ \
+    project/main/include/
+
+
 
 DISTFILES += \
     CMakeLists.txt \
@@ -2653,6 +2693,8 @@ DISTFILES += \
     make/project.mk \
     make/project_config.mk \
     make/version.mk \
+    project/main/CMakeLists.txt \
+    project/main/component.mk \
     requirements.txt \
     sdkconfig.rename \
     tools/check_kconfigs.py \
@@ -3879,6 +3921,7 @@ HEADERS += \
     examples/wifi/iperf/components/iperf/iperf.h \
     examples/wifi/iperf/main/cmd_decl.h \
     examples/wifi/iperf/main/cmd_wifi.h \
+    project/main/include/wifi_ap.h \
     tools/kconfig/expand_env.h \
     tools/kconfig/expr.h \
     tools/kconfig/list.h \
@@ -4990,6 +5033,8 @@ SOURCES += \
     examples/wifi/sniffer/main/sniffer_main.c \
     examples/wifi/wpa2_enterprise/main/wpa2_enterprise_main.c \
     examples/wifi/wps/main/wps.c \
+    project/main/main.c \
+    project/main/wifi_ap.c \
     tools/kconfig/conf.c \
     tools/kconfig/confdata.c \
     tools/kconfig/expand_env.c \
